@@ -7,7 +7,7 @@ var dealCount = 0
 $('.scoreRightBox').text(houseScore)
 $('.scoreLeftBox').text(playerScore)
 $('#cashDisplay').text(cashReserves)
-const $cardBack = $('<img id="faceDown" src="http://deckofcardsapi.com/static/img/back.png">')
+const $cardBack = $('<img id="faceDown" src="https://deckofcardsapi.com/static/img/back.png">')
 
 
 
@@ -22,7 +22,7 @@ const deckInit = () => {
     for (let i = 0; i < otherButts3.length; i++) {
         otherButts3[i].disabled = true;
     }
-    $.get(`http://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=6`, (data) => {
+    $.get(`https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=6`, (data) => {
         deckOfCards = data
     }
     )
@@ -110,7 +110,7 @@ function playerWin() {
 
 //make card and count value
 function hitCard() {
-    $.get(`http://deckofcardsapi.com/api/deck/${deckOfCards['deck_id']}/draw/?count=1`, (data) => {
+    $.get(`https://deckofcardsapi.com/api/deck/${deckOfCards['deck_id']}/draw/?count=1`, (data) => {
         console.log(data)
         let $cardImage = $(`<img class="faceUp" src=${data['cards'][0]['image']}>`)
         let cardValue = parseInt(data['cards'][0]['value'])
@@ -198,7 +198,7 @@ function playDealer() {
     for (let i = 0; i < otherButts3.length; i++) {
         otherButts3[i].disabled = true;
     }
-    $.get(`http://deckofcardsapi.com/api/deck/${deckOfCards['deck_id']}/draw/?count=1`, (data) => {
+    $.get(`https://deckofcardsapi.com/api/deck/${deckOfCards['deck_id']}/draw/?count=1`, (data) => {
         let $cardImage = $(`<img class="faceUp" src=${data['cards'][0]['image']}>`)
         let cardValue = parseInt(data['cards'][0]['value'])
         if (data['cards'][0]['value'] === 'ACE') {
