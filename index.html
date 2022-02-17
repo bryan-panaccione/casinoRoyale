@@ -23,31 +23,66 @@
     </div>
 
     <div id="gameContain">
-        <div class="playContainer">
+        <div class="cashReserve">
+            <div class="moneyyy">
+                <div>$</div>
+                <div id="cashDisplay"></div>
+            </div>
 
+        </div>
+
+        <div class="playContainer">
+            <div style="width: 80%; display: flex;">
+                <div style="display: flex;
+                background-color: rgba(1, 71, 1, 0.7);
+                width: 100%;
+                font-style: italic;
+                margin-right: 2rem;
+                font-size: x-large;
+                align-items: center;
+                justify-content: flex-start;">Player
+                    <div class="scoreLeftBox" style="margin-left: 2rem;"></div>
+                </div>
+            </div>
             <div class="leftSide">
 
             </div>
-
+            <div style="width: 80%; display: flex;">
+                <div style="display: flex;
+                width: 100%;
+                background-color: rgba(1, 71, 1, 0.7);
+                color: rgb(104, 7, 7);
+                font-weight: bolder;
+                margin-right: 2rem;
+                margin-bottom: 1em;
+                font-size: x-large;
+                align-items: center;
+                justify-content: flex-start;">Dealer
+                    <div class="scoreRightBox" style="margin-left: 2rem;"></div>
+                </div>
+            </div>
             <div class="rightSide">
             </div>
         </div>
+
         <div class="controls">
-            <div class="cashReserve">Money:<div id="cashDisplay"></div>
-            </div>
+
             <div class="userFields">
                 <input id="wagerInput" placeholder="Enter Bet Amount" type="text">
                 <button class="preBetEnabled" id="lock">Lock Wager</button>
-                <Button class="preBetDisabled duringGame" id="deal">DEAL!</Button>
-                <Button class="preBetEnabled" id="deckMake">New Deck</Button>
+                <Button class="preBetDisabled" id="deal">DEAL!</Button>
+
                 <button class="preBetDisabled startOver" id="newHand">New Hand</button>
                 <button class="preBetDisabled duringGame dis2" id="hitter">Hit Me</button>
                 <button class="preBetDisabled duringGame dis2" id="stay">Stay</button>
             </div>
-            <div class="scoreLeftBox"></div>
-            <div class="scoreRightBox"></div>
+
+            <Button class="preBetEnabled" id="deckMake">Shuffle Deck</Button>
         </div>
-        <div>Your wager must be a multiple of 5</div>
+        <div id="betRule"><b>Rules:</b>Standard BlackJack EXCEPT: Wager must be multiple of 5 <em
+                style="color: gray">and</em> "ACE" is
+            always 11
+        </div>
 
 
     </div>

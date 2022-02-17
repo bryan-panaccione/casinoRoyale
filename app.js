@@ -9,6 +9,8 @@ $('.scoreLeftBox').text(playerScore)
 $('#cashDisplay').text(cashReserves)
 const $cardBack = $('<img id="faceDown" src="http://deckofcardsapi.com/static/img/back.png">')
 
+
+
 const deckInit = () => {
     document.querySelector('#newHand').disabled = false;
     const otherButts = document.querySelectorAll('.lockDis')
@@ -34,9 +36,10 @@ function wagerSet() {
         wager = parseInt(document.querySelector('#wagerInput').value)
         //button triggers
         document.querySelector('#lock').disabled = true;
+        document.querySelector('#deal').disabled = false;
         const otherButts2 = document.querySelectorAll('.duringGame')
         for (let i = 0; i < otherButts2.length; i++) {
-            otherButts2[i].disabled = false;
+            otherButts2[i].disabled = true;
         }
         document.querySelector('#deckMake').disabled = true;
 
@@ -56,12 +59,17 @@ function win() {
     cashReserves += wager
     $('#cashDisplay').text(cashReserves.toLocaleString())
 }
+function noWin() {
+    cashReserves += 0
+    $('#cashDisplay').text(cashReserves.toLocaleString())
+}
 
 function reservesCheck() {
     if (cashReserves < 0) {
         $('.hiddenDiv2').toggleClass('showDiv2')
     }
 }
+
 
 $resultsMessage = $('<div class="hiddenDiv"></div>')
 $('.playContainer').append($resultsMessage)
@@ -88,13 +96,19 @@ function dealerWin() {
     reservesCheck()
 }
 
+function tie() {
+    $resultsMessage.text('TIE! No Winner')
+    $resultsMessage.toggleClass('showDiv')
+    noWin()
+}
+
 function playerWin() {
     $resultsMessage.text('YOU WIN!')
     $resultsMessage.toggleClass('showDiv')
     win()
 }
 
-//lw5uw2w3xcme
+//make card and count value
 function hitCard() {
     $.get(`http://deckofcardsapi.com/api/deck/${deckOfCards['deck_id']}/draw/?count=1`, (data) => {
         console.log(data)
@@ -138,6 +152,7 @@ function hitCard() {
     })
 }
 
+//start a new hand
 function newHand() {
     document.querySelector('#newHand').disabled = true;
     $resultsMessage.toggleClass('showDiv')
@@ -160,8 +175,13 @@ function newHand() {
     $('.rightSide').html('')
 }
 
+// initial deal
 function dealHand() {
     document.querySelector('#deal').disabled = true;
+    const otherButts2 = document.querySelectorAll('.duringGame')
+    for (let i = 0; i < otherButts2.length; i++) {
+        otherButts2[i].disabled = false;
+    }
     let i = 0;
     while (i < 3) {
         hitCard()
@@ -169,6 +189,8 @@ function dealHand() {
     }
 }
 
+
+//dealer plays out his hand
 function playDealer() {
     $("#faceDown").remove()
     document.querySelector('#newHand').disabled = false;
@@ -199,9 +221,15 @@ function playDealer() {
             houseScore = 0
             playerScore = 0
         }
-        else if (houseScore <= 21 && houseScore >= playerScore) {
+        else if (houseScore <= 21 && houseScore > playerScore) {
             dealerWin()
             console.log('dealer wins')
+            houseScore = 0
+            playerScore = 0
+        }
+        else if (houseScore === playerScore) {
+            tie()
+            console.log('tie')
             houseScore = 0
             playerScore = 0
         } else {
@@ -215,7 +243,7 @@ function playDealer() {
 }
 
 
-
+//buttons
 $('#lock').click(wagerSet)
 
 $('#deckMake').click(deckInit)

@@ -1,4 +1,7 @@
 body{
+    background: url(bgpoker2.svg);
+
+    
     display: flex;
     margin: 0;
     justify-content: space-around;
@@ -6,24 +9,36 @@ body{
 }
 
 .playContainer{
-    margin-top: 10em;
-    background-color: green;
-height: 50em;
-width: 80em;
-display: flex;
-justify-content: center;
+    background-color: none;
+    border-style: solid;
+    color: white;
+    height: 50em;
+    width: 80em;
+    display: flex;
+    justify-content: space-around;
     align-items: center;
+    flex-direction: column-reverse;
+    
 }
 
+
+
 .rightSide{
-    background-color: darkcyan;
-    height: 95%;
-    width: 47%;
+    display: flex;
+    background-color: rgb(17, 105, 9, .5);
+
+    height: 45%;
+    width: 95%;
+    align-items: center;
+    justify-content: flex-start;
 }
 .leftSide{
-    background-color: rgb(130, 139, 0);
-    height: 95%;
-    width: 47%;
+    display: flex;
+    background-color: rgb(17, 105, 9, .5);
+    height: 45%;
+    width: 95%;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 
@@ -76,16 +91,31 @@ justify-content: center;
 }
 
 .controls{
-    margin: 2rem;
+    width: 80em;
+    height: 5em;
+    border-style: solid;
+    background: rgb(175 175 1 / 50%);
+    margin-top: 2em;
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
     align-items: center;
 }
 
-.cashReserve{
-    display: inline-flex;
-    margin-right: 1rem;
+.moneyyy{
+    display: flex;
+    color: gold;
 }
+.cashReserve{
+    display: flex;
+    margin-top: 5rem;
+    width: 30%;
+    height: 4rem;
+    font-size: xxx-large;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
 
 .userFields{
     display: flex;
@@ -99,6 +129,13 @@ button{
 }
 .scoreLeftBox{
     margin-right: 1rem;
+    color: white;
+    font-size: xxx-large;
+}
+.scoreRightBox{
+    margin-right: 1rem;
+    color: rgb(104, 7, 7);
+    font-size: xxx-large;
 }
 
 .faceUp {
@@ -106,4 +143,59 @@ button{
 }
 #faceDown {
     width: 10rem;
+}
+
+
+input{
+    color: #555f66;
+    font-family: "Roboto", Helvetica, sans-serif;
+    font-size: 14pt;
+    font-weight: 300;
+    border-style: none;
+    border-radius: 6px;
+    line-height: 1.75em;
+}
+
+button{
+    background-color: gold;
+    color: #000000;
+    font-family: "Roboto", Helvetica, sans-serif;
+    font-size: 12pt;
+    font-weight: 600;
+    border-style: none;
+    border-radius: 6px;
+    line-height: 1.75em;
+}
+
+button:disabled{
+    background-color: #555f66;
+}
+
+button:active{
+    background-color: darkgreen;
+    color: white;
+}
+
+#betRule{
+    color: white;
+}
+
+.dealLabel{
+    position: absolute;
+    top: 28%;
+    right: 51%;
+    color: white;
+    z-index: 0;
+}
+
+.playContainer2{
+    background-color: none;
+    border-style: solid;
+    color: white;
+    height: 50em;
+    width: 80em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
 }
