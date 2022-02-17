@@ -30,7 +30,7 @@ const deckInit = () => {
 function wagerSet() {
 
 
-    if (document.querySelector('#wagerInput').value % 5 === 0) {
+    if (document.querySelector('#wagerInput').value % 5 === 0 && Number.isInteger(parseInt(document.querySelector('#wagerInput').value))) {
         wager = parseInt(document.querySelector('#wagerInput').value)
         //button triggers
         document.querySelector('#lock').disabled = true;
@@ -41,7 +41,7 @@ function wagerSet() {
         document.querySelector('#deckMake').disabled = true;
 
     } else {
-        wagerSet()
+        return
 
 
     }
@@ -182,6 +182,7 @@ function playDealer() {
         if (data['cards'][0]['value'] === 'ACE') {
             houseScore += 11
             $('.rightSide').append($cardImage)
+            $('.scoreRightBox').text(houseScore)
         } else {
             houseScore += (cardValue || 10)
             console.log(houseScore)
