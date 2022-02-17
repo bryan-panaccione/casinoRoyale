@@ -13,25 +13,42 @@
 </head>
 
 <body>
-    <div class="controls">
-        <div class="cashReserve">Remaining Money:</div>
-        <div class="userFields">
-            <input placeholder="Enter Bet Amount" type="text"><Button class="dis1" id="deal">DEAL!</Button><Button
-                id="deckMake" class="dis1">New Deck</Button>
-            <button class="startOver" id="newHand">New Hand</button><button class="startOver" id="hitter">Hit
-                Me</button> <button id="stay">Stay</button>
+    <div class="hiddenDiv2" id="gambleHotline">
+        <div>
+            NATIONAL PROBLEM GAMBLING HELPLINE
         </div>
-        <div class="scoreLeftBox"></div>
-        <div class="scoreRightBox"></div>
+        <div>
+            1-800-522-4700
+        </div>
     </div>
-    <div class="playContainer">
 
-        <div class="leftSide">
+    <div id="gameContain">
+        <div class="playContainer">
 
+            <div class="leftSide">
+
+            </div>
+
+            <div class="rightSide">
+            </div>
+        </div>
+        <div class="controls">
+            <div class="cashReserve">Money:<div id="cashDisplay"></div>
+            </div>
+            <div class="userFields">
+                <input id="wagerInput" placeholder="Enter Bet Amount" type="text">
+                <button class="preBetEnabled" id="lock">Lock Wager</button>
+                <Button class="preBetDisabled duringGame" id="deal">DEAL!</Button>
+                <Button class="preBetEnabled" id="deckMake">New Deck</Button>
+                <button class="preBetDisabled startOver" id="newHand">New Hand</button>
+                <button class="preBetDisabled duringGame dis2" id="hitter">Hit Me</button>
+                <button class="preBetDisabled duringGame dis2" id="stay">Stay</button>
+            </div>
+            <div class="scoreLeftBox"></div>
+            <div class="scoreRightBox"></div>
         </div>
 
-        <div class="rightSide">
-        </div>
+
     </div>
 
 </body>
