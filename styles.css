@@ -1,3 +1,7 @@
+html {
+    overflow: hidden;
+}
+
 body{
     background: url(bgpoker2.svg);
 
@@ -218,9 +222,31 @@ button:active{
   }
 
   @media screen and (max-width:800px) {
+
+    html {
+ 
+        height: auto !important;
+        display: table !important;
+        margin-left: 10% !important;
+        margin-right: 5px !important; 
+         
+    }
+         
+        body {
+        display:table-cell !important;
+        vertical-align: middle !important;
+        } 
+
+    .gameContainer{
+        margin: 5em;
+        float:none!important
+    }
     body{
-        background:rgb(0, 0, 0)
+        background:rgb(0, 0, 0);
+        
     };
+
+ 
     button{
         margin-top: 10px;
     }
@@ -505,4 +531,5 @@ button:active{
         align-items: center;
         flex-direction: column;
     }
-}}
+}
+  }
