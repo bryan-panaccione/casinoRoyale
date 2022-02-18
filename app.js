@@ -1,3 +1,5 @@
+//various useful variables
+
 var wager = 0;
 var cashReserves = 100;
 var deckOfCards = undefined;
@@ -10,7 +12,7 @@ $('#cashDisplay').text(cashReserves)
 const $cardBack = $('<img id="faceDown" src="https://deckofcardsapi.com/static/img/back.png">')
 
 
-
+//create deck on load or shuffle
 const deckInit = () => {
     document.querySelector('#newHand').disabled = false;
     const otherButts = document.querySelectorAll('.lockDis')

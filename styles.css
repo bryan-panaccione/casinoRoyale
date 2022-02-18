@@ -149,7 +149,7 @@ button{
 input{
     color: #555f66;
     font-family: "Roboto", Helvetica, sans-serif;
-    font-size: 14pt;
+    font-size: 20pt !important;
     font-weight: 300;
     border-style: none;
     border-radius: 6px;
@@ -157,18 +157,24 @@ input{
 }
 
 button{
-    background-color: gold;
-    color: #000000;
-    font-family: "Roboto", Helvetica, sans-serif;
-    font-size: 12pt;
+    background-image: linear-gradient(#e1ec7a, #b3a700);
+    border: 0;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, .3) 0 5px 15px;
+    box-sizing: border-box;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    font-family: Montserrat,sans-serif;
+    font-size: .9em;
     font-weight: 600;
-    border-style: none;
-    border-radius: 6px;
-    line-height: 1.75em;
+    margin: 5px;
+    padding: 10px 15px;
+    text-align: center;
 }
 
 button:disabled{
-    background-color: #555f66;
+    background-image: linear-gradient(#9e9e9e, #2c2c26);
+    color: white;
 }
 
 button:active{
@@ -199,3 +205,304 @@ button:active{
     align-items: center;
     flex-direction: column;
 }
+
+/*responsive css*/
+
+@viewport {
+    width: device-width ;
+    zoom: 1.0 ;
+  }
+
+  @-ms-viewport {
+    width: device-width ;
+  }
+
+  @media screen and (max-width:800px) {
+    body{
+        background:rgb(0, 0, 0)
+    };
+    button{
+        margin-top: 10px;
+    }
+
+    .playContainer{
+        border-style: solid;
+    color: white;
+    height: 33em;
+    width: 29em;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    border-radius: 5%;
+    }
+
+    .controls {
+        width: 30em;
+        height: fit-content;
+        background: rgb(175 175 1 / 50%);
+        margin-top: 2em;
+        display: flex;
+        align-items: stretch;
+        /* align-content: space-around; */
+        flex-direction: column;
+        border-radius: 5%;
+        padding: 5px;
+        padding-top: 10px;
+    }
+  
+
+    .userFields{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+  }
+
+
+#betRule{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+  input {
+    color: #555f66;
+    font-family: "Roboto", Helvetica, sans-serif;
+    font-size: 14pt !important;
+    font-weight: 300;
+    border-style: none;
+    border-radius: 6px;
+    width: 50%;
+    line-height: 1.75em;
+}
+.faceUp {
+    width: 5rem;
+}
+#faceDown {
+    width: 5rem;
+}
+
+.hiddenDiv{
+    font-size: 5rem;
+    color: red;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+.cashReserve{
+    display: flex;
+    margin-top: 1rem;
+    width: 30%;
+    height: 4rem;
+    font-size: xxx-large;
+    flex-direction: row;
+    justify-content: space-around;
+}
+  @media screen and (min-width:800px) {
+      /*desktop*/
+
+    body{
+        background: url(bgpoker2.svg);
+    
+        
+        display: flex;
+        margin: 0;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    .playContainer{
+        background-color: none;
+        border-style: solid;
+        color: white;
+        height: 45em;
+        width: 78em;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column-reverse;
+        
+    }
+    
+    
+    
+    .rightSide{
+        display: flex;
+        background-color: rgb(17, 105, 9, .5);
+    
+        height: 45%;
+        width: 95%;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .leftSide{
+        display: flex;
+        background-color: rgb(17, 105, 9, .5);
+        height: 45%;
+        width: 95%;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    
+    
+    .hiddenDiv{
+        font-size: 10rem;
+        color: red;
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+    }
+    .showDiv{
+        font-size: 10rem;
+        font-weight: 700;
+        color: red;
+        position: absolute;
+        opacity: 100% !important;
+        pointer-events: none;
+        transform: rotate(30deg);
+        background-color: white;
+    }
+    
+    
+    .hiddenDiv2{
+        font-size: 10rem;
+        color: red;
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+    }
+    .showDiv2{
+        display: flex;
+        font-size: 10em;
+        font-weight: 700;
+        color: red;
+        position: absolute;
+        opacity: 100% !important;
+        pointer-events: none;
+        background-color: rgb(0, 0, 0);
+        z-index: 1000;
+        height: 100%;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    #gameContain{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .controls{
+        width: 80em;
+        height: 5em;
+        border-style: solid;
+        background: rgb(175 175 1 / 50%);
+        margin-top: 2em;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    
+    .moneyyy{
+        display: flex;
+        color: gold;
+    }
+    .cashReserve{
+        display: flex;
+        margin-top: 5rem;
+        width: 30%;
+        height: 4rem;
+        font-size: xxx-large;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    
+    .userFields{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    
+    button{
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    .scoreLeftBox{
+        margin-right: 1rem;
+        color: white;
+        font-size: xxx-large;
+    }
+    .scoreRightBox{
+        margin-right: 1rem;
+        color: rgb(104, 7, 7);
+        font-size: xxx-large;
+    }
+    
+    .faceUp {
+        width: 10rem;
+    }
+    #faceDown {
+        width: 10rem;
+    }
+    
+    
+    input{
+        color: #555f66;
+        font-family: "Roboto", Helvetica, sans-serif;
+        font-size: 14pt;
+        font-weight: 300;
+        border-style: none;
+        border-radius: 6px;
+        line-height: 1.75em;
+    }
+    
+    button{
+        background-image: linear-gradient(#0dccea, #0d70ea);
+        border: 0;
+        border-radius: 4px;
+        box-shadow: rgba(0, 0, 0, .3) 0 5px 15px;
+        box-sizing: border-box;
+        color: rgb(0, 0, 0);
+        cursor: pointer;
+        font-family: Montserrat,sans-serif;
+        font-size: .9em;
+        margin: 5px;
+        padding: 10px 15px;
+        text-align: center;
+    }
+    
+    button:disabled{
+        background-color: #555f66;
+    }
+    
+    button:active{
+        background-color: darkgreen;
+        color: white;
+    }
+    
+    #betRule{
+        color: white;
+    }
+    
+    .dealLabel{
+        position: absolute;
+        top: 28%;
+        right: 51%;
+        color: white;
+        z-index: 0;
+    }
+    
+    .playContainer2{
+        background-color: none;
+        border-style: solid;
+        color: white;
+        height: 50em;
+        width: 80em;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+    }
+}}
